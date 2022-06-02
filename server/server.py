@@ -71,8 +71,7 @@ def run_continuously(ls, interval=3):
         @classmethod
         def check_code(cls):
             ls.show_message_log("Checking Document")
-            if ls.last_document and ls.did_change:
-                ls.did_change = False
+            if ls.last_document is not None and ls.did_change:
                 with suppress(SyntaxError):
                     module = CodeModule(ls.last_document)
                     matches = _get_matches(module, ls.substructures)
@@ -80,7 +79,8 @@ def run_continuously(ls, interval=3):
                     publish_diagnostics(ls)
                     diagnostics = _make_diagnostics(ls.current_matches)
                     publish_diagnostics(ls, diagnostics)
-                ls.show_message_log("Document Did Change")
+                    ls.did_change = False
+                    ls.show_message_log("Document Did Change")
 
     continuous_thread = ScheduleThread()
     continuous_thread.start()
@@ -108,20 +108,21 @@ def hover(ls, params: TextDocumentPositionParams) -> Optional[Hover]:
 @stylezilla_server.feature(TEXT_DOCUMENT_DID_CHANGE)
 def did_change(ls, params: DidChangeTextDocumentParams):
     """Text document did change notification."""
+    ls.did_change = True
     text_doc = ls.workspace.get_document(params.text_document.uri)
     ls.last_document = text_doc.source
+    ls.show_message_log(ls.last_document)
     ls.last_document_uri = params.text_document.uri
-    ls.did_change = True
 
 
 @stylezilla_server.feature(TEXT_DOCUMENT_DID_OPEN)
 def did_open(ls, params):
     """Text document did change notification."""
     get_configuration(ls)
+    ls.did_change = True
     text_doc = ls.workspace.get_document(params.text_document.uri)
     ls.last_document = text_doc.source
     ls.last_document_uri = params.text_document.uri
-    ls.did_change = True
 
 
 @stylezilla_server.feature(TEXT_DOCUMENT_PUBLISH_DIAGNOSTICS)
