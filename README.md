@@ -2,6 +2,12 @@
 
 A VS Code extension to detect and flag micro-antipatterns in students' Python code.
 
+For example:
+
+![Example Showing Diagnostics](/.github/assets/example1.png?raw=true)
+
+![Example Showing Description](/.github/assets/example2.png?raw=true)
+
 ## Development
 
 Stylezilla is still in the development stage.
