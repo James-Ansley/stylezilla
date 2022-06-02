@@ -1,0 +1,150 @@
+{
+    "name": "stylezilla",
+    "displayName": "Stylezilla",
+    "description": "A simple extension to identify micro-antipatterns in student Python code",
+    "author": "James Ansley",
+    "repository": "https://github.com/James-Ansley/stylezilla",
+    "license": "SEE LICENSE IN ./LICENSE",
+    "version": "1.0.0-alpha.1",
+    "publisher": "James Ansley",
+    "engines": {
+        "vscode": "^1.62.0"
+    },
+    "categories": [
+        "Education"
+    ],
+    "activationEvents": [
+        "onLanguage:python"
+    ],
+    "contributes": {
+        "commands": [],
+        "configuration": {
+            "type": "object",
+            "title": "Stylezilla",
+            "properties": {
+                "Stylezilla.substructures": {
+                    "type": "object",
+                    "description": "Switch patterns on an off",
+                    "properties": {
+                        "ElseIf": {
+                            "type": "boolean"
+                        },
+                        "ConfusingElse": {
+                            "type": "boolean"
+                        },
+                        "RedundantFor": {
+                            "type": "boolean"
+                        },
+                        "MergeableEqual": {
+                            "type": "boolean"
+                        },
+                        "RedundantComparison": {
+                            "type": "boolean"
+                        },
+                        "RedundantNot": {
+                            "type": "boolean"
+                        },
+                        "RedundantArithmetic": {
+                            "type": "boolean"
+                        },
+                        "RepeatedMultiplication": {
+                            "type": "boolean"
+                        },
+                        "RepeatedAddition": {
+                            "type": "boolean"
+                        },
+                        "MissedAbsoluteValue": {
+                            "type": "boolean"
+                        },
+                        "AugmentableAssignment": {
+                            "type": "boolean"
+                        },
+                        "DuplicateIfElseBody": {
+                            "type": "boolean"
+                        },
+                        "SeveralDuplicateIfElseStatements": {
+                            "type": "boolean"
+                        },
+                        "DuplicateIfElseStatement": {
+                            "type": "boolean"
+                        },
+                        "UnnecessaryElse": {
+                            "type": "boolean"
+                        },
+                        "NestedIf": {
+                            "type": "boolean"
+                        },
+                        "EmptyElseBody": {
+                            "type": "boolean"
+                        },
+                        "EmptyIfBody": {
+                            "type": "boolean"
+                        },
+                        "IfElseAssignBool": {
+                            "type": "boolean"
+                        },
+                        "IfElseAssignReturn": {
+                            "type": "boolean"
+                        },
+                        "IfElseAssignBoolReturn": {
+                            "type": "boolean"
+                        },
+                        "IfReturnBool": {
+                            "type": "boolean"
+                        },
+                        "IfElseReturnBool": {
+                            "type": "boolean"
+                        },
+                        "UnnecessaryElif": {
+                            "type": "boolean"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "default": {
+                        "ElseIf": true,
+                        "ConfusingElse": true,
+                        "RedundantFor": true,
+                        "MergeableEqual": true,
+                        "RedundantComparison": true,
+                        "RedundantNot": true,
+                        "RedundantArithmetic": true,
+                        "RepeatedMultiplication": true,
+                        "RepeatedAddition": true,
+                        "MissedAbsoluteValue": true,
+                        "AugmentableAssignment": true,
+                        "DuplicateIfElseBody": true,
+                        "SeveralDuplicateIfElseStatements": true,
+                        "DuplicateIfElseStatement": true,
+                        "UnnecessaryElse": true,
+                        "NestedIf": true,
+                        "EmptyElseBody": true,
+                        "EmptyIfBody": true,
+                        "IfElseAssignBool": true,
+                        "IfElseAssignReturn": true,
+                        "IfElseAssignBoolReturn": true,
+                        "IfReturnBool": true,
+                        "IfElseReturnBool": true,
+                        "UnnecessaryElif": true
+                    }
+                }
+            }
+        }
+    },
+    "main": "./client/out/extension",
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -b",
+        "watch": "tsc -b -w"
+    },
+    "devDependencies": {
+        "@types/node": "^16.11.6",
+        "@types/vscode": "^1.62.0",
+        "@typescript-eslint/eslint-plugin": "^5.3.0",
+        "@typescript-eslint/parser": "^5.3.0",
+        "eslint": "^8.2.0",
+        "typescript": "^4.4.4"
+    },
+    "dependencies": {
+        "vscode-languageclient": "^7.0.0"
+    }
+}
