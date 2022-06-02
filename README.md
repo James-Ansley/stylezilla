@@ -18,3 +18,14 @@ To get started with development, make sure you have Python 3.10 installed before
 3. Install npm requirements: `npm install && cd client && npm install`
 
 To run the extension go to the `Run and Debug` menu and select `Server + Client` from the configuration dropdown (top left). Then, run the debugger.
+
+## Acknowledgements
+
+Many thanks are owed to the CS399 team at UoA who got this project up and running:
+
+- [Matt Perrin](https://github.com/PerrinFinger)
+- [Kitty Lau](https://github.com/kittylau152)
+- [Viresh Oberoi](https://github.com/viresh-oberoi)
+- [Rohan Patel](https://github.com/RohanPatel-1)
+- [Rinkesh Patel](https://github.com/Rinkesh-P)
+- [Huy Gia Nguyen](https://github.com/hugn456)
