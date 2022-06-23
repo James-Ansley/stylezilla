@@ -1,2 +1,2 @@
 pygls~=0.11.3
-qchecker @ git+https://github.com/James-Ansley/qchecker@f710ec0de394d9889b51ae91469d96d203dd898b
+qchecker~=1.1.0

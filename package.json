@@ -97,6 +97,21 @@
                         },
                         "UnnecessaryElif": {
                             "type": "boolean"
+                        },
+                        "WhileAsFor": {
+                            "type": "boolean"
+                        },
+                        "NoOp": {
+                            "type": "boolean"
+                        },
+                        "Tautology": {
+                            "type": "boolean"
+                        },
+                        "Contradiction": {
+                            "type": "boolean"
+                        },
+                        "ForWithRedundantIndexing": {
+                            "type": "boolean"
                         }
                     },
                     "additionalProperties": false,
@@ -124,7 +139,12 @@
                         "IfElseAssignBoolReturn": true,
                         "IfReturnBool": true,
                         "IfElseReturnBool": true,
-                        "UnnecessaryElif": true
+                        "UnnecessaryElif": true,
+                        "WhileAsFor": true,
+                        "NoOp": true,
+                        "Tautology": true,
+                        "Contradiction": true,
+                        "ForWithRedundantIndexing": true
                     }
                 }
             }

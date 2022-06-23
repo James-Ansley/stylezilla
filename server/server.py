@@ -30,7 +30,7 @@ from qchecker.substructures import SUBSTRUCTURES
 from qchecker.parser import CodeModule
 
 EXTENSION_NAME = "Stylezilla"
-SECONDS_BETWEEN_UPDATE = 3
+SECONDS_BETWEEN_UPDATE = 1
 
 
 class PythonLanguageServer(LanguageServer):
